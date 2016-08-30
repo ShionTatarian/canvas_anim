@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/main_activity"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/margin_double"
+    android:paddingLeft="@dimen/margin_normal"
+    android:paddingRight="@dimen/margin_normal"
+    android:paddingTop="@dimen/margin_double"
+    tools:context="fi.qvik.canvasanimation.MainActivity"
+>
+
+    <fi.qvik.canvasanimation.CanvasView
+        android:id="@+id/canvasView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="@dimen/margin_double"
+    />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_double"
+        android:onClick="onRandomClick"
+        android:text="Random!"
+    />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_normal"
+        android:text="Pulse frequency: 2000"
+    />
+
+    <fi.qvik.canvasanimation.PulsingView
+        android:id="@+id/pulsing_view"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+    />
+
+</LinearLayout>
