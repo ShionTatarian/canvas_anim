@@ -16,7 +16,6 @@ import android.graphics.Paint.Style;
 import android.graphics.PorterDuff.Mode;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
-import android.graphics.RectF;
 import android.os.Build.VERSION_CODES;
 import android.support.annotation.ColorInt;
 import android.support.annotation.DrawableRes;
