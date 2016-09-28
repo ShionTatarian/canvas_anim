@@ -19,12 +19,18 @@ public class MainActivity extends AppCompatActivity {
     private PulsingView pulsingView;
     private TextView text;
     private ImageView transitionImage;
+    private PieChartView pieView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
+        pieView = (PieChartView) findViewById(R.id.pieView);
+        pieView.addAngle(45, Color.RED);
+        pieView.addAngle(45, Color.GREEN);
+        pieView.addAngle(180, Color.BLUE);
+        pieView.addAngle(200, Color.BLACK);
         transitionImage = (ImageView) findViewById(R.id.transition_image_view);
         pulsingView = (PulsingView) findViewById(R.id.pulsing_view);
         pulsingView.startPulseAnimation(2000);
@@ -38,12 +44,24 @@ public class MainActivity extends AppCompatActivity {
 
         canvasView.setColor(Color.rgb(r.nextInt(255), r.nextInt(255), r.nextInt(255)));
 
+        pieView.clear();
+        for (int i = 0; i < 1 + r.nextInt(20); i++) {
+            pieView.addAngle(r.nextInt(360), getRandomColor(r));
+        }
 
         int freq = 200 * (1 + r.nextInt(10));
         text.setText(String.format("Pulse frequency: %d", freq));
         pulsingView.startPulseAnimation(freq);
 
         testTransitionDrawable();
+
+
+//        pieView.animateMaxAngle(r.nextInt(360));
+        pieView.animatePieChart();
+    }
+
+    private int getRandomColor(Random r) {
+        return Color.argb(255, r.nextInt(255), r.nextInt(255), r.nextInt(255));
     }
 
     private void testTransitionDrawable() {
