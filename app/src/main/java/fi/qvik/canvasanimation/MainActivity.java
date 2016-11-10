@@ -20,12 +20,14 @@ public class MainActivity extends AppCompatActivity {
     private TextView text;
     private ImageView transitionImage;
     private PieChartView pieView;
+    private RoundProgressView roundProgressView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
+        roundProgressView = (RoundProgressView) findViewById(R.id.round_progress_view);
         pieView = (PieChartView) findViewById(R.id.pieView);
         pieView.addAngle(45, Color.RED);
         pieView.addAngle(45, Color.GREEN);
@@ -41,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void onRandomClick(View view) {
         Random r = new Random();
+
+        roundProgressView.setColor(Color.rgb(r.nextInt(255), r.nextInt(255), r.nextInt(255)));
+        roundProgressView.animateProgress(r.nextFloat());
 
         canvasView.setColor(Color.rgb(r.nextInt(255), r.nextInt(255), r.nextInt(255)));
 

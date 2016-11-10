@@ -12,27 +12,41 @@
     android:paddingRight="@dimen/margin_normal"
     android:paddingTop="@dimen/margin_double"
     tools:context="fi.qvik.canvasanimation.MainActivity"
->
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="@dimen/margin_double"
+        android:clipToPadding="false"
         >
 
         <fi.qvik.canvasanimation.CanvasView
             android:id="@+id/canvasView"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginRight="@dimen/margin_normal"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_half"
             />
 
         <fi.qvik.canvasanimation.PieChartView
             android:id="@+id/pieView"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginLeft="@dimen/margin_normal"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_half"
+            />
+
+        <fi.qvik.canvasanimation.RoundProgressView
+            android:id="@+id/round_progress_view"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_half"
+            app:progress="0.3"
+            app:progressColor="@color/primary"
+            app:progressWidth="@dimen/margin_one"
             />
 
     </LinearLayout>

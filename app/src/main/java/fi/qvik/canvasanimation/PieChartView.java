@@ -93,7 +93,7 @@ public class PieChartView extends View {
             return;
         }
 
-        float start = 0;
+        float start = -90;
         //draw slices
         for (int i = 0; i < slices.size(); i++) {
             paint.setColor(colors.get(i));
@@ -106,7 +106,7 @@ public class PieChartView extends View {
         // cut center
         canvas.drawCircle(canvas.getWidth() / 2, canvas.getHeight() / 2, (canvas.getWidth() / 2) - lineWidth, transparentPaint);
         // animation cut
-        canvas.drawArc(cutBox, maxAngle, 360 - maxAngle, true, transparentPaint);
+        canvas.drawArc(cutBox, -90 + maxAngle, 360 - maxAngle, true, transparentPaint);
     }
 
     public void animatePieChart() {
